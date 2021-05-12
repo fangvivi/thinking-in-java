@@ -18,8 +18,27 @@ public class StringsExercise15 {
             print("模式参数包括：\"CANON_EQ, CASE_INSENSITIVE, COMMENTS, DOTALL, MULTILINE, UNICODE_CASE, UNIX_LINES\"");
             System.exit(0);
         }
+        int flag = 0;
+        if(args[2].equalsIgnoreCase("CANON_EQ")) {
+            flag = Pattern.CANON_EQ;
+        } else if(args[2].equalsIgnoreCase("CASE_INSENSITIVE")) {
+            flag = Pattern.CASE_INSENSITIVE;
+        } else if(args[2].equalsIgnoreCase("COMMENTS")) {
+            flag = Pattern.COMMENTS;
+        } else if(args[2].equalsIgnoreCase("DOTALL")) {
+            flag = Pattern.DOTALL;
+        } else if(args[2].equalsIgnoreCase("MULTILINE")) {
+            flag = Pattern.MULTILINE;
+        } else if(args[2].equalsIgnoreCase("UNICODE_CASE")) {
+            flag = Pattern.UNICODE_CASE;
+        } else if(args[2].equalsIgnoreCase("UNIX_LINES")) {
+            flag = Pattern.UNIX_LINES;
+        } else {
+            print("请输入正确的正则表达式模式参数！");
+            System.exit(0);
+        }
 
-        Pattern pattern = Pattern.compile(args[1]);
+        Pattern pattern = Pattern.compile(args[1],flag);
         int index = 0;
         // 在循环外声明对象可以避免循环中重复创建
         Matcher matcher = pattern.matcher("");
