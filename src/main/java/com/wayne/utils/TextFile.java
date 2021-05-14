@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -43,5 +44,24 @@ public class TextFile extends ArrayList<String> {
 
     public TextFile(String filename){
         this(filename,"\n");
+    }
+
+    /**
+     * 迭代获取一个目录中所有的文件，包括子目录
+     * @param file 目录或文件
+     * @param list 用来存放遍历到的文件
+     * @return 所有遍历到的文件
+     */
+    public static List<File> getFiles(File file, List<File> list){
+        if(!file.isDirectory()){
+            list.add(file);
+        } else {
+            File[] files = file.listFiles();
+            for (File temp : files) {
+                getFiles(temp, list);
+            }
+        }
+        return list;
+
     }
 }
