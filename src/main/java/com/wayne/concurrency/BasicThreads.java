@@ -9,7 +9,6 @@ public class BasicThreads {
     public static void main(String[] args) {
         Thread thread = new Thread(new LiftOff());
         thread.start();
-        thread.run();
         print("等待LiftOff的run()执行……");
     }
 }
