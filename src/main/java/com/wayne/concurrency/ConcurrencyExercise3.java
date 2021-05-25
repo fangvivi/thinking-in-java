@@ -13,7 +13,7 @@ import static com.wayne.utils.Print.printnb;
  **********************************************
  * @author wayne
  */
-public class concurrencyExercise3 {
+public class ConcurrencyExercise3 {
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
         print("CachedThreadPool start");

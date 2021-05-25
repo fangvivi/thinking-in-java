@@ -1,7 +1,6 @@
 package com.wayne.concurrency;
 
 
-import static com.wayne.utils.Print.printnb;
 
 /**
  * @author wayne

@@ -12,7 +12,7 @@ package com.wayne.concurrency;
  ***********************************************
  * @author wayne
  */
-public class concurrencyExercise1{
+public class ConcurrencyExercise1{
     public static void main(String[] args) {
         for (int i = 0; i < 4; i++) {
             new Thread(new Printer()).start();
