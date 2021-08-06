@@ -1,4 +1,4 @@
-package com.wayne.strings;
+package com.wayne.strings.exercise;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

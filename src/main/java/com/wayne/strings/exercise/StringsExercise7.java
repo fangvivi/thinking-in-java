@@ -1,4 +1,4 @@
-package com.wayne.strings;
+package com.wayne.strings.exercise;
 
 /**
  ****************** Exercise 7 ******************

@@ -1,4 +1,6 @@
-package com.wayne.strings;
+package com.wayne.strings.exercise;
+
+import com.wayne.strings.Splitting;
 
 import java.util.Arrays;
 
