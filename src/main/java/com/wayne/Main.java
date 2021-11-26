@@ -1,12 +1,14 @@
 package com.wayne;
 
+import lombok.extern.slf4j.Slf4j;
+
+import java.math.BigDecimal;
+@Slf4j
 public class Main {
     public static void main(String[] args) {
-        String str = "元 9";
-        char[] chars = str.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            String s = Integer.toHexString(chars[i]);
-            System.out.println(s);
-        }
+        BigDecimal a = new BigDecimal("60");
+        BigDecimal b = new BigDecimal("80");
+        BigDecimal subtract = a.max(b).subtract(a.min(b));
+        log.info("结果【{}】",subtract.toString());
     }
 }
