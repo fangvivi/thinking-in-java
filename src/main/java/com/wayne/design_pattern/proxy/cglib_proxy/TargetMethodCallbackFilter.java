@@ -19,15 +19,15 @@ public class TargetMethodCallbackFilter implements CallbackFilter {
      */
     @Override
     public int accept(Method method) {
-        if(method.getName().equals("method1")){
+        if("method1".equals(method.getName())){
             System.out.println("filter method1 ==0");
             return 0;
         }
-        if(method.getName().equals("method2")){
+        if("method2".equals(method.getName())){
             System.out.println("filter method2 ==1");
             return 1;
         }
-        if(method.getName().equals("method3")){
+        if("method3".equals(method.getName())){
             System.out.println("filter method3 ==2");
             return 2;
         }
