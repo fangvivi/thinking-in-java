@@ -1,5 +1,9 @@
 package com.wayne.design_pattern.proxy.static_proxy;
 
+/**
+ * 被代理的的对象
+ * @author wayne
+ */
 public class RealImage implements Image{
     private String fileName;
 

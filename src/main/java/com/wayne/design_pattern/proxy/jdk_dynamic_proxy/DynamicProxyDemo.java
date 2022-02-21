@@ -15,7 +15,7 @@ public class DynamicProxyDemo {
         System.out.println(target);
         // 代理对象
         IUserDao proxy =
-                (IUserDao) new ProxyFactor(target).getProxyInstance();
+                (IUserDao) new ProxyFactory(target).getProxyInstance();
         System.out.println(proxy.getClass());
         proxy.save();
     }

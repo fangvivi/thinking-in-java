@@ -14,7 +14,7 @@ public class CGLibProxyDemo {
         System.out.println(dao);
         // 代理对象
         UserDao proxy =
-                (UserDao) new CGLibProxyFactor(dao).getProxyInstance();
+                (UserDao) new CGLibProxyFactory(dao).getProxyInstance();
         System.out.println(proxy.getClass());
         proxy.save();
     }
