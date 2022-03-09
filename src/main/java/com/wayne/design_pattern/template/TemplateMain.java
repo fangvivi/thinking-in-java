@@ -1,4 +1,4 @@
-package com.wayne.design_pattern.template_pattern;
+package com.wayne.design_pattern.template;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

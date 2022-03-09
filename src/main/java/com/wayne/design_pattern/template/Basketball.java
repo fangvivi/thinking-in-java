@@ -1,4 +1,4 @@
-package com.wayne.design_pattern.template_pattern;
+package com.wayne.design_pattern.template;
 
 /**
  * @author wayne
