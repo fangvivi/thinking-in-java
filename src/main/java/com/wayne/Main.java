@@ -1,14 +1,21 @@
 package com.wayne;
 
-import lombok.extern.slf4j.Slf4j;
+import com.wayne.java8.Dish;
+import com.wayne.strings.Groups;
+import org.openjdk.jol.info.ClassLayout;
 
 
 /**
  * @author wayne
  */
-@Slf4j
 public class Main {
+    static class A{
+        int a;
+        double b;
+        Groups c = new Groups();
+    }
     public static void main(String[] args) {
-
+       A a = new A();
+        System.out.println(ClassLayout.parseInstance(a).toPrintable());
     }
 }
