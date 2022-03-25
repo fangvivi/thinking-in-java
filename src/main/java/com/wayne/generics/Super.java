@@ -1,10 +1,10 @@
 package com.wayne.generics;
 
 /**
- * 使用<? super Integer>通配符表示：
- * 允许调用set(? super Integer)方法传入Integer的引用；
- * 不允许调用get()方法获得Integer的引用。
- * 即一句话总结：使用super通配符表示可以写，不能读
+ * 声明通配符是由某个特定类的任何父类
+ * 因为 Integer 是下界，所以你知道向这样的 List 中添加 Number 是不安全的，
+ * 因为这将使这个 List 敞开口子，从而可以向其中添加非 Integer类型的对象，而这是违反静态类型安全的。
+ * 使用super通配符表示可以写，不能读
  * @author wayne
  */
 public class Super {
@@ -19,10 +19,19 @@ public class Super {
     }
 
 
+    /**
+     * 允许调用set(? super Integer)方法传入Integer的引用；
+     * 不允许调用get()方法获得Integer的引用。
+     * <? super T>允许调用写方法set(T)传入T的引用，但不允许调用读方法T get()获取T的引用（获取Object除外）。
+     */
     static void setSame(Pair<? super Integer> p, Integer n) {
+        Number number = new Double(2.0);
+        //p.setFirst(number);
         p.setFirst(n);
         p.setLast(n);
-        // 使用super通配符表示可以写，不能读
+        // 不允许调用get()方法获得Integer的引用。
+        //Integer a = p.getLast();
+        Object last = p.getLast();
     }
 
 
