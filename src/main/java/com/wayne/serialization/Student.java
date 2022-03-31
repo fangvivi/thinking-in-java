@@ -3,12 +3,13 @@ package com.wayne.serialization;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * 序列化和反序列化测试
  * @author wayne
  */
-public class Student implements Serializable {
+public class Student implements Serializable, Cloneable{
 
     /**
      * 使用transient和static修饰的字段不会被序列化
@@ -31,6 +32,10 @@ public class Student implements Serializable {
     }
 
 
+    @Override
+    public Student clone() throws CloneNotSupportedException {
+        return (Student) super.clone();
+    }
 
     public void setScore(Integer score) {
         this.score = score;
@@ -45,7 +50,24 @@ public class Student implements Serializable {
                 '}';
     }
 
-    private void readObject( ObjectInputStream objectInputStream ) throws IOException, ClassNotFoundException {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Student student = (Student) o;
+        return Objects.equals(name, student.name) && Objects.equals(age, student.age) && Objects.equals(score, student.score);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, score);
+    }
+
+    private void readObject(ObjectInputStream objectInputStream ) throws IOException, ClassNotFoundException {
 
         // 调用默认的反序列化函数
         objectInputStream.defaultReadObject();
