@@ -25,8 +25,7 @@ public class FileFilter {
      * "::" 是java8的方法引用，把方法作为值，直接传递给listFiles()方法
      */
     public File[] getHiddenFilesJava8(String path){
-        File[] hiddenFiles = new File(path).listFiles(File::isHidden);
-        return hiddenFiles;
+        return new File(path).listFiles(File::isHidden);
     }
 
 }

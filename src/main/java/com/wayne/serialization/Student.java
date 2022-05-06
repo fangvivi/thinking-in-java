@@ -67,7 +67,8 @@ public class Student implements Serializable, Cloneable{
         return Objects.hash(name, age, score);
     }
 
-    private void readObject(ObjectInputStream objectInputStream ) throws IOException, ClassNotFoundException {
+    private void readObject(ObjectInputStream objectInputStream )
+            throws IOException, ClassNotFoundException {
 
         // 调用默认的反序列化函数
         objectInputStream.defaultReadObject();
