@@ -1,7 +1,7 @@
 package com.wayne.design_pattern.template;
 
 /**
- * 模板模式
+ * 模板方法模式
  * @author wayne
  */
 public class TemplateMain {

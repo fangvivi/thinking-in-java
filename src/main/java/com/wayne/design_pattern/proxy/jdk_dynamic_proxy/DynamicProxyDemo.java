@@ -10,12 +10,13 @@ package com.wayne.design_pattern.proxy.jdk_dynamic_proxy;
  */
 public class DynamicProxyDemo {
     public static void main(String[] args) {
-        // 目标对象
-        IUserDao target = new UserDao();
+        // 目标对象（被代理对象）
+        IUserDao target = new UserDaoService();
         System.out.println(target);
+
         // 代理对象
-        IUserDao proxy =
-                (IUserDao) new ProxyFactory(target).getProxyInstance();
+        ProxyFactory proxyFactory = new ProxyFactory(target);
+        IUserDao proxy = (IUserDao)proxyFactory.getProxyInstance();
         System.out.println(proxy.getClass());
         proxy.save();
     }

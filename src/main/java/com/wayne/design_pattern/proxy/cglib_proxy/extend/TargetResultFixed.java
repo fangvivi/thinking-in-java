@@ -1,4 +1,4 @@
-package com.wayne.design_pattern.proxy.cglib_proxy;
+package com.wayne.design_pattern.proxy.cglib_proxy.extend;
 
 import net.sf.cglib.proxy.FixedValue;
 
@@ -15,7 +15,7 @@ public class TargetResultFixed implements FixedValue {
      * method this callback is mapped to
      */
     @Override
-    public Object loadObject() throws Exception {
+    public Object loadObject() {
         System.out.println("锁定结果");
         /*
           整型，CallbackFilter中定义的使用FixedValue型回调的方法为getConcreteMethodFixedValue，该方法返回值为整型

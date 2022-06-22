@@ -1,4 +1,4 @@
-package com.wayne.design_pattern.proxy.cglib_proxy;
+package com.wayne.design_pattern.proxy.cglib_proxy.extend;
 
 import net.sf.cglib.proxy.Callback;
 import net.sf.cglib.proxy.CallbackFilter;

@@ -1,4 +1,4 @@
-package com.wayne.design_pattern.proxy.cglib_proxy;
+package com.wayne.design_pattern.proxy.cglib_proxy.extend;
 
 /**
  * @author wayne

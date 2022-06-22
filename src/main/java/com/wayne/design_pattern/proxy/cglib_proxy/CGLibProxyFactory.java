@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 
 /**
  * 基于CGlib实现动态代理，可以为没有实现接口的类实现代理
- * 原理是动态生成被代理类的子类，这个子类可以重新所有父类的非final方法，
+ * 原理是动态生成被代理类的子类，这个子类可以重载所有父类的非final方法，
  * 在调用父类方法的之前，自动调用用户实现的方法拦截逻辑
  * @author wayne
  */
@@ -31,7 +31,6 @@ public class CGLibProxyFactory implements MethodInterceptor {
         // 设置父类
         en.setSuperclass(target.getClass());
         // 设置回调函数
-        // en.setCallback(new CGLibProxyFactory());
         en.setCallback(this);
         // 创建代理对象
         return en.create();
